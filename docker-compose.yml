@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  productsservices:
+    image: ${DOCKER_REGISTRY-}productsservices
+    build:
+      context: .
+      dockerfile: ProductsServices\Dockerfile
+
+  usersservices:
+    image: ${DOCKER_REGISTRY-}usersservices
+    build:
+      context: .
+      dockerfile: UsersServices\Dockerfile
+
