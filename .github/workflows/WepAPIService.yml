@@ -51,9 +51,11 @@ jobs:
         run: dotnet publish ${{ env.WORKING_DIRECTORY }} --configuration ${{ env.CONFIGURATION }} --no-build --output ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
       - name: Show publish output path
-        run: echo "Published to: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+        shell: cmd
+        run: echo Published to: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
       - name: List files in publish directory
+        shell: cmd
         run: dir ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
       - name: Install Swashbuckle CLI .NET Global Tool
